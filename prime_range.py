@@ -1,19 +1,11 @@
+from check_prime import check_prime
+
 def prime_range(num):
+    '''This function imports the check_prime function from the module of the same name.
+It takes an integer as a parameter and returns a list of prime numbers that exist between 1 and that integer'''
     is_prime = []
-    test_prime = []
-
-    for n in range(1,num):
-        if num % n == 0:
-            test_prime.append(n)
-            
-    if len(test_prime) == 1:
-        is_prime.append(num)
-    return is_prime
-
-
     
     for n in range(1,num):
-        if num % n == 0:
-            test_prime.append(n)
-
-    if len(test_prime) == 1:
+        if check_prime(n):
+            is_prime.append(n)
+    return is_prime
